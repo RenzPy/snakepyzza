@@ -50,10 +50,15 @@ pizza_position = [random.randrange(1, (window_x//10)) * 10,
 pizza_spawn = True
 
 # Main Function
-while True:
-
-    # HANDLING KEY EVENTS
+running = True
+while running:
+    
+    # CLOSE THE GAME ON 'X' WINDOW CLICK
     for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False  # Set the running flag to False to exit the game loop when 'X' is clicked
+
+        # HANDLING KEY EVENTS
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 change_to = 'UP'
@@ -63,7 +68,7 @@ while True:
                 change_to = 'LEFT'
             if event.key == pygame.K_RIGHT:
                 change_to = 'RIGHT'
-    
+
     # DISABLE MOVE IN TWO DIRECTIONS IF TWO KEYS ARE PRESSED
     if change_to == 'UP' and direction != 'DOWN':
         direction = 'UP'
@@ -127,4 +132,3 @@ while True:
  
     # Frame Per Second /Refresh Rate
     fps.tick(snake_speed)
-    

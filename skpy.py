@@ -43,7 +43,7 @@ def game_over():
      
     # creating a text surface on which text 
     # will be drawn
-    game_over_surface = my_font.render('Your Score is : ' + str(score), True, red)
+    game_over_surface = my_font.render('PyzzaScore™: ' + str(score), True, red)
      
     # create a rectangular object for the text
     # surface object
@@ -58,7 +58,7 @@ def game_over():
      
     # after 2 seconds we will quit the 
     # program
-    time.sleep(2)
+    
      
     # deactivating pygame library
     pygame.quit()

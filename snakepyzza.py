@@ -3,6 +3,7 @@ import pygame
 import time
 import random
 
+
 # SNAKEPYZZA PIZZA EATING SNAKE GAME
 # FOLLOWING TUTORIAL https://www.geeksforgeeks.org/snake-game-in-python-using-pygame-module/
 # README.md FOR MORE INFORMATION
@@ -47,6 +48,10 @@ snake_body = [  [100, 50], # DEFINING FIRST 4 BLOCKS OF SNAKE BODY
 pizza_position = [random.randrange(1, (window_x//10)) * 10,
                   random.randrange(1, (window_y//10)) * 10]
 pizza_spawn = True
+pizza_image = pygame.image.load("assets/pizza.png")
+pizza_size = (20, 20)  
+pizza_image = pygame.transform.scale(pizza_image, pizza_size)
+
 
 
 # DISPLAY SCORE FUNCTION
@@ -156,8 +161,7 @@ while running:
         pygame.draw.rect(game_window, green, pygame.Rect(
           pos[0], pos[1], 10, 10))
          
-    pygame.draw.rect(game_window, white, pygame.Rect(
-      pizza_position[0], pizza_position[1], 10, 10))
+    game_window.blit(pizza_image, (pizza_position[0], pizza_position[1])) # Draw the pizza image
  
     # Game Over conditions
     if snake_position[0] < 0 or snake_position[0] > window_x-10:

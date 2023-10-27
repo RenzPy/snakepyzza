@@ -110,9 +110,9 @@ while True:
  
     # Game Over conditions
     if snake_position[0] < 0 or snake_position[0] > window_x-10:
-        game_over()
+        skpy.game_over()
     if snake_position[1] < 0 or snake_position[1] > window_y-10:
-        game_over()
+        skpy.game_over()
      
     # Touching the snake body
     for block in snake_body[1:]:

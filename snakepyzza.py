@@ -2,7 +2,6 @@
 import pygame
 import time
 import random
-import skpy
 
 # SNAKEPYZZA PIZZA EATING SNAKE GAME
 # FOLLOWING TUTORIAL https://www.geeksforgeeks.org/snake-game-in-python-using-pygame-module/
@@ -70,34 +69,31 @@ def show_score(choice, color, font, size):
 
 # GAME OVER
 def game_over():
-# creating font object my_font
     my_font = pygame.font.SysFont('times new roman', 50)
-     
-    # creating a text surface on which text 
-    # will be drawn
     game_over_surface = my_font.render('PyzzaScore™: ' + str(score), True, red)
-     
-    # create a rectangular object for the text
-    # surface object
     game_over_rect = game_over_surface.get_rect()
-     
-    # setting position of the text
-    game_over_rect.midtop = (window_x/2, window_y/4)
-     
-    # blit will draw the text on screen
+    game_over_rect.midtop = (window_x / 2, window_y / 4)
     game_window.blit(game_over_surface, game_over_rect)
-    pygame.display.flip()
-     
-    # after 2 seconds we will quit the 
-    # program
-    
-     
-    # deactivating pygame library
-    pygame.quit()
-     
-    # quit the program
-    quit()
 
+    # Display a "Press any key to quit" message
+    press_key_font = pygame.font.SysFont('times new roman', 30)
+    press_key_surface = press_key_font.render('Press any key to quit', True, white)
+    press_key_rect = press_key_surface.get_rect()
+    press_key_rect.midtop = (window_x / 2, window_y / 2)
+    game_window.blit(press_key_surface, press_key_rect)
+
+    pygame.display.flip()
+
+    game_over = True  # Set the game_over flag to True
+
+    while game_over:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            if event.type == pygame.KEYDOWN:
+                pygame.quit()
+                quit()
 
 # Main Function
 running = True

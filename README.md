@@ -1,4 +1,4 @@
-# snakepyzza
+# 🐍𝘚𝘯𝘢𝘬𝘦𝘗𝘺𝘻𝘻𝘢🍕 - 𝘳𝘦𝘯𝘻𝘱𝘺
 
 Being a beginner i want to start my journey with a python game project to expand my knowledge.
 

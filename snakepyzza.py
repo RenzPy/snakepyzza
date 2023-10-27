@@ -34,7 +34,7 @@ green = pygame.Color(0, 255, 0)
 blue = pygame.Color(0, 0, 255)
 
 # SNAKE RELATED
-snake_speed = 15
+snake_speed = 10
 direction = 'RIGHT' # SETTING DEFAULT SNAKE POSITION
 change_to = direction # TO THE RIGHT
 snake_position = [100, 50]

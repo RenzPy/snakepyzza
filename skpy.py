@@ -1,20 +1,30 @@
 import pygame
 
+score = 0
+
+# WINDOW SIZE
+window_x = 720
+window_y = 480
+
+# INITIALISE GAME WINDOW
+pygame.display.set_caption("𝘚𝘯𝘢𝘬𝘦𝘗𝘺𝘻𝘻𝘢 - 𝘳𝘦𝘯𝘻𝘱𝘺") # window title
+game_window = pygame.display.set_mode((window_x, window_y))
+
 # DISPLAY SCORE FUNCTION
 def show_score(choice, color, font, size):
    
-       # creating font object score_font 
+    # creating font object score_font 
     score_font = pygame.font.SysFont(font, size)
      
-        # create the display surface object
-        # score_surface
+    # create the display surface object
+    # score_surface
     score_surface = score_font.render('Score : ' + str(score), True, color)
      
-        # create a rectangular object for the 
-        # text surface object
+    # create a rectangular object for the 
+    # text surface object
     score_rect = score_surface.get_rect()
      
-        # displaying text
+    # displaying text
     game_window.blit(score_surface, score_rect)
 
 # GAME OVER
